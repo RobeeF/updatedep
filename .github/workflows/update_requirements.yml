@@ -42,5 +42,4 @@ jobs:
 
       if: env.PR_MERGED == 'true' && (
           (env.ORIGIN_BRANCH == 'develop' && env.TARGET_BRANCH == 'staging') ||
-          (env.ORIGIN_BRANCH == 'staging' && env.TARGET_BRANCH == 'main')
-      )
+          (env.ORIGIN_BRANCH == 'staging' && env.TARGET_BRANCH == 'main'))
