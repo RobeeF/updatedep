@@ -1,0 +1,10 @@
+numpy
+pandas==1.4.3
+pyvis==0.3.2
+fuzzywuzzy
+google-cloud-aiplatform
+jsja @ git+ssh://git@github.com/blaorg/jsja.git@develop
+abc @ git+ssh://git@github.com/blaorg/abc.git@develop
+uah @ git+ssh://git@github.com/blaorg/uah.git@develop
+baba @ git+ssh://git@github.com/blaorg/gcpfunctions.git@develop
+PubChemPy==1.0.4
