@@ -11,7 +11,7 @@ pattern = re.compile(r'^(myorganization/\w+)')
 
 # Fonction pour mettre à jour la ligne de dépendance
 def update_dependency(match):
-    return f'{match.group(1)} @ git+ssh://git@github.com/myorganization/{match.group(1)}.git@{target_branch}'
+    return f'{match.group(1)} @ git+ssh://git@github.com/blaorg/{match.group(1)}.git@{target_branch}'
 
 # Ouvrir le fichier requirements.txt en mode lecture
 with open(requirements_file, 'r') as f:
