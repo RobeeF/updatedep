@@ -1,17 +1,19 @@
 import re
 
 # Le nom de la branche cible (par exemple, "staging")
+origin_branch = "develop"
 target_branch = "staging"
 
-# Chemin vers votre fichier requirements.txt
+# Translate: Path to your requirements.txt file
 requirements_file = "requirements.txt"
 
-# Pattern pour rechercher les lignes de dépendances de votre organisation
-pattern = re.compile(r'^(myorganization/\w+)')
+# Check that the dependencies to update are in the right organization 
+orgname = 'blaorg'
+pattern = re.compile('git\+ssh://git@github.com/' + orgname)
 
 # Fonction pour mettre à jour la ligne de dépendance
-def update_dependency(match):
-    return f'{match.group(1)} @ git+ssh://git@github.com/blaorg/{match.group(1)}.git@{target_branch}'
+def update_dependency(dependency_line):
+    return re.sub('@' + origin_branch, '@' + target_branch, dependency_line)
 
 # Ouvrir le fichier requirements.txt en mode lecture
 with open(requirements_file, 'r') as f:
@@ -21,10 +23,10 @@ with open(requirements_file, 'r') as f:
 with open(requirements_file, 'w') as f:
     for line in lines:
         # Rechercher des correspondances avec le pattern
-        match = pattern.match(line)
+        match = pattern.search(line)
         if match:
             # Mettre à jour la ligne de dépendance
-            new_line = update_dependency(match) + '\n'
+            new_line = update_dependency(line)
             f.write(new_line)
         else:
             # Écrire la ligne telle quelle
