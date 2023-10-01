@@ -3,8 +3,8 @@ pandas==1.4.3
 pyvis==0.3.2
 fuzzywuzzy
 google-cloud-aiplatform
-jsja @ git+ssh://git@github.com/blaorg/jsja.git@staging
-abc @ git+ssh://git@github.com/blaorg/abc.git@staging
-uah @ git+ssh://git@github.com/blaorg/uah.git@staging
-baba @ git+ssh://git@github.com/blaorg/gcpfunctions.git@staging
+jsja @ git+ssh://git@github.com/blaorg/jsja.git@main
+abc @ git+ssh://git@github.com/blaorg/abc.git@main
+uah @ git+ssh://git@github.com/blaorg/uah.git@main
+baba @ git+ssh://git@github.com/blaorg/gcpfunctions.git@main
 PubChemPy==1.0.4
