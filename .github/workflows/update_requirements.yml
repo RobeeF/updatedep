@@ -40,4 +40,6 @@ jobs:
         git commit -m "Update the pointed branch of our internal dependencies after PR merge"
         git push
 
-      if: env.PR_MERGED == 'true'
+      if: env.PR_MERGED == 'true' && (
+          (env.ORIGIN_BRANCH == 'develop' && env.TARGET_BRANCH == 'staging') ||
+          (env.ORIGIN_BRANCH == 'staging' && env.TARGET_BRANCH == 'main'))
